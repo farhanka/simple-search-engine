@@ -16,20 +16,21 @@ Bahasa yang digunakan adalah perl dan Python
           
 2. Scrapping (/scrap) 
    
-    - py [nama_script] [jumlah_dokumen]
-    contoh: py scrap_detik.py 1000
-  
+       - py [nama_script] [jumlah_dokumen]
+       - contoh: py scrap_detik.py 1000
+   
 3. Cleaning (/):
     
-     - py cleaner.py [situs] [jumlah dokumen]
-     contoh py cleaner.py detik 1000
+         - py cleaner.py [situs] [jumlah dokumen]
+         - contoh py cleaner.py detik 1000
   
 4. Indexing (/) :
 
-    - py indexing.py
+         - py indexing.py
     
 5.  Menjalankan Flask (/)
-    - py app.py
+
+         - py app.py
     
 6. Buka 127.0.0.1/5000
      
