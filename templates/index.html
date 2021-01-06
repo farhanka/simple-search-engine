@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    <title>Yeet</title>
+</head>
+<body>
+    <div class="head">
+        <h1>Bukan Google</h1>
+    </div>
+    <div class="form">
+        <input class="form-input" id="query" type="text" autofocus="" placeholder="Cari apa?">
+        <input class="form-input" id="banyak" type="text" value="3">
+    </div>
+    
+    <div class="buttons">
+        <button class="btn " id="cari">Cari</button>
+        <button class="btn " id="reset">Reset</button>
+    </div>
+    
+    
+    <div id="root"></div>
+</body>
+
+
+
+</html>
+
+<script>
+    const query = document.querySelector('#query');
+    const banyak = document.querySelector('#banyak')
+    const cari = document.querySelector('#cari');
+    const root = document.querySelector("#root");
+    const reset = document.querySelector("#reset");
+    cari.addEventListener('click', res=>{
+        if(query.value && banyak.value){
+        fetch(`http://127.0.0.1:5000/${query.value}/${banyak.value}`)
+        .then(response=>response.json())
+        .then(data=>{
+            root.innerHTML = `<p>Menampilkan ${data.length} dokumen teratas</p>`
+            
+            data.forEach(el=>{
+                root.innerHTML += `
+                
+                <div>
+                    <div><a href="${el.url}">${el.title}</a></div>
+                    <div>${el.desc}</div>
+                </div>
+                `
+             })
+                
+        })}
+    })
+    
+    reset.addEventListener('click', res=>{
+        
+                root.innerHTML = ""
+                query.value = ""
+                banyak.value = "3"
+        })
+</script>
