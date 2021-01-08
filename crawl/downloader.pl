@@ -4,11 +4,11 @@ use FindBin qw( $RealBin );
 
 my $currentpath = $RealBin;
 my %hash;
-my $filename = $ARGV[0] or die "\nArgumen tidak valid.\n> perl [file_sumber_link]\nContoh: perl output.txt\n";
+my $filename = $ARGV[0] or die "\nArgumen tidak valid.\n> perl downloader.pl [file_sumber_link]\nContoh: perl downloader.pl output.txt\n";
 
 open (my $fh, '<:encoding(UTF-8)', $filename) or die "\nFile gagal dibuat!\n";
 
-my $x=0, my $y=586;
+my $x=0, my $y=1;
 while (my $row = <$fh>){
     chomp($row);
 
@@ -16,8 +16,8 @@ while (my $row = <$fh>){
         `wget -O ../download/detik/source/detik-$y.html $row`;
 	    $y++;
 
-    }elsif($row =~ "https://www.jpnn.com/" && $y <= 1000){
-        `wget -O ../download/jpnn/source/jpnn-$y.html $row`;
+    }elsif($row =~ "https://www.viva.co.id/" && $y <= 1000){
+        `wget -O ../download/viva/source/viva-$y.html $row`;
 	    $y++;
 
     }elsif($row =~ "https://www.kompas.com/" && $y <= 1000) {
