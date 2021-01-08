@@ -12,12 +12,13 @@ Bahasa yang digunakan adalah perl dan Python
     * mendownload html dari link output
     
           - perl downloader.pl [file link yang sudah terbuat dari crawling]
-          - contoh : perl output_detik.txt
+          - contoh : perl downloader.pl output_detik.txt
           
 2. Scrapping (/scrap) 
+   * mengambil bagian penting dari dokumen
    
-       - py [nama_script] [jumlah_dokumen]
-       - contoh: py scrap_detik.py 1000
+          - py [nama_script] [jumlah_dokumen]
+          - contoh: py scrap_detik.py 1000
    
 3. Cleaning (/):
     
