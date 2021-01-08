@@ -88,8 +88,6 @@ for i in range(total_documents):
             out.close()
             os.system('cls')
     except:
-        print("\nERROR :",site,"not available.")
-        print("Available site: detik, viva, kompas")
         sys.exit(1)
 
 print(total_documents, " document(s) saved in: /download/"+site+"/cleaned\n")
