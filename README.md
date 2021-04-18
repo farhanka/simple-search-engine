@@ -1,6 +1,6 @@
 # simple-search-engine
 
-Bahasa yang digunakan adalah perl dan Python
+Search Engine Artikel Berita
 
 ## Cara Penggunaan
 1. Crawling (/crawl)
